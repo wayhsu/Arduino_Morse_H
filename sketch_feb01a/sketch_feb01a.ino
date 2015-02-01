@@ -135,6 +135,7 @@ void loop()
       letterId(Numbers[info - '0']);
     }
     else if(info == ' ') {
+      Serial.println();
       delay(1000); 
     }
   }
