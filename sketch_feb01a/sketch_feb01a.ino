@@ -85,7 +85,7 @@ void loop()
   else if ((buttonState_now == 0) && (buttonState_prev == 0) && (button_idx != 0))
   {
       digitalWrite(13,LOW);
-      if ((now_time - down_stamp) > 2000)
+      if ((now_time - down_stamp) > 1000)
       {
           button_buf[button_idx++] = '\0';
 
@@ -174,7 +174,7 @@ void letterId(char* character)
     i++;
    }
   Serial.println();
-  delay(750);
+  delay(700);
 }
 
 void output(char ID) {
@@ -185,10 +185,10 @@ void output(char ID) {
           
   digitalWrite(13,HIGH);
   if (ID == '.') {
-    delay(200);          
+    delay(100);          
   } else {
-    delay(750);          
+    delay(700);          
   }
   digitalWrite(13,LOW);
-  delay(200);
+  delay(100);
 }
