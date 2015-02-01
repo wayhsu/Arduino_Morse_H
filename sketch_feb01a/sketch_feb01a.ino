@@ -99,6 +99,27 @@ void loop()
                 Serial.println();
                 break;
             }
+            if (i < 10)
+            {
+              if (compare_char(Numbers[i], button_buf) == 1)
+              {
+                  //Serial.print("Parsing: ");
+                  Serial.print(" ; I sent: ");
+                  Serial.write('0' + i);
+                  Serial.println();
+                  break;
+              }
+            }
+            if (i < 1)
+            {
+              if (compare_char(".......", button_buf) == 1)
+              {
+                  //Serial.print("Parsing: ");
+                  Serial.print(" ; I sent:   ");
+                  Serial.println();
+                  break;
+              }
+            }
         }
         if (i >= 26)
         {
@@ -135,7 +156,7 @@ void loop()
       letterId(Numbers[info - '0']);
     }
     else if(info == ' ') {
-      Serial.println();
+      Serial.println("  ");
       delay(1000); 
     }
   }
